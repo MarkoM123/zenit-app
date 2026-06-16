@@ -15,7 +15,7 @@ ${items
   .join("\n")}
 `;
 
-  return `https://wa.me/381600000000?text=${encodeURIComponent(
+  return `https://wa.me/381644386369?text=${encodeURIComponent(
     text
   )}`;
 }
