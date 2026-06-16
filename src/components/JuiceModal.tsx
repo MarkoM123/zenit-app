@@ -57,7 +57,7 @@ export default function JuiceModal({
   return (
     <div className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm">
       <div className="flex min-h-screen items-center justify-center p-4">
-        <div className="w-full max-w-5xl overflow-hidden rounded-[32px] border border-zinc-800 bg-zinc-950">
+        <div className="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-[32px] border border-zinc-800 bg-zinc-950">
 
           <div className="grid lg:grid-cols-2">
 
