@@ -19,29 +19,31 @@ export default function Home() {
   } = useCart();
 
   return (
-  <main
-    id="top"
-    className="min-h-screen bg-[#07110A] text-white"
-  >
-    <Navbar />
+    <main
+      id="top"
+      className="min-h-screen bg-[#07110A] text-white"
+    >
+      <Navbar />
 
-    <Hero />
+      <Hero />
 
-    <MicrogreensSection />
+      <MicrogreensSection />
 
-    <JuicesSection />
+      <JuicesSection
+        addToCart={addToCart}
+      />
 
-    <RecipesSection />
+      <RecipesSection />
 
-    <ShopSection
-      addToCart={addToCart}
-    />
+      <ShopSection
+        addToCart={addToCart}
+      />
 
-    <Cart
-      items={items}
-      total={total}
-      removeFromCart={removeFromCart}
-    />
-  </main>
-);
+      <Cart
+        items={items}
+        total={total}
+        removeFromCart={removeFromCart}
+      />
+    </main>
+  );
 }

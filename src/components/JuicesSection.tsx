@@ -4,12 +4,26 @@ import { useState } from "react";
 import JuiceModal from "./JuiceModal";
 import { juices } from "@/src/data/juices";
 
-export default function JuicesSection() {
-  const [selected, setSelected] = useState<(typeof juices)[0] | null>(null);
+type Props = {
+  addToCart: (product: {
+    id: number;
+    name: string;
+    price: number;
+  }) => void;
+};
+
+export default function JuicesSection({
+  addToCart,
+}: Props) {
+  const [selected, setSelected] =
+    useState<(typeof juices)[0] | null>(null);
 
   return (
     <>
-      <section id="juices" className="py-24">
+      <section
+        id="juices"
+        className="py-24"
+      >
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-5xl font-bold">
             Funkcionalni{" "}
@@ -55,13 +69,22 @@ export default function JuicesSection() {
 
                 <div className="mt-8 flex gap-3">
                   <button
+                    onClick={() =>
+                      addToCart({
+                        id: juice.id,
+                        name: juice.name,
+                        price: juice.price,
+                      })
+                    }
                     className="flex-1 rounded-xl bg-green-500 px-4 py-3 font-semibold text-black transition hover:bg-green-400"
                   >
                     Dodaj u korpu
                   </button>
 
                   <button
-                    onClick={() => setSelected(juice)}
+                    onClick={() =>
+                      setSelected(juice)
+                    }
                     className="rounded-xl border border-zinc-700 px-4 py-3 transition hover:border-green-700"
                   >
                     Više detalja
@@ -76,7 +99,9 @@ export default function JuicesSection() {
       <JuiceModal
         open={!!selected}
         juice={selected}
-        onClose={() => setSelected(null)}
+        onClose={() =>
+          setSelected(null)
+        }
       />
     </>
   );

@@ -1,6 +1,6 @@
 export const juices = [
   {
-    id: "energy",
+    id: 101,
     name: "Energy",
     price: 350,
 
@@ -20,7 +20,7 @@ Zajedno čine hranljiv napitak koji je odličan izbor za početak dana ili osve�
   },
 
   {
-    id: "imuno",
+    id: 102,
     name: "Imuno",
     price: 350,
 
@@ -40,7 +40,7 @@ Rezultat je osvežavajući sok pun prirodnih sastojaka koji se lako uklapa u ura
   },
 
   {
-    id: "beauty",
+    id: 103,
     name: "Beauty",
     price: 350,
 
