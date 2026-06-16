@@ -6,6 +6,7 @@ import JuicesSection from "@/src/components/JuicesSection";
 import RecipesSection from "@/src/components/RecipesSection";
 import ShopSection from "@/src/components/ShopSection";
 import Cart from "@/src/components/Cart";
+import MicrogreensSection from "@/src/components/MicrogreensSection";
 
 import { useCart } from "@/src/hooks/useCart";
 
@@ -18,24 +19,28 @@ export default function Home() {
   } = useCart();
 
   return (
-    <main className="min-h-screen bg-[#07110A] text-white">
-      <Navbar />
+  <main
+    id="top"
+    className="min-h-screen bg-[#07110A] text-white"
+  >
+    <Navbar />
 
-      <Hero />
+    <Hero />
 
-      <JuicesSection />
+    <MicrogreensSection />
 
-      <RecipesSection />
+    <JuicesSection />
 
-      <ShopSection
-        addToCart={addToCart}
-      />
+    <RecipesSection />
 
-      <Cart
-        items={items}
-        total={total}
-        removeFromCart={removeFromCart}
-      />
-    </main>
-  );
-}
+    <ShopSection
+      addToCart={addToCart}
+    />
+
+    <Cart
+      items={items}
+      total={total}
+      removeFromCart={removeFromCart}
+    />
+  </main>
+);
