@@ -2,6 +2,8 @@
 
 import Navbar from "@/src/components/Navbar";
 import Hero from "@/src/components/Hero";
+import JuicesSection from "@/src/components/JuicesSection";
+import RecipesSection from "@/src/components/RecipesSection";
 import ShopSection from "@/src/components/ShopSection";
 import Cart from "@/src/components/Cart";
 
@@ -16,11 +18,14 @@ export default function Home() {
   } = useCart();
 
   return (
-    <main className="bg-[#07110A] text-white">
+    <main className="min-h-screen bg-[#07110A] text-white">
       <Navbar />
+
       <Hero />
 
-      {/* ostale sekcije */}
+      <JuicesSection />
+
+      <RecipesSection />
 
       <ShopSection
         addToCart={addToCart}
